@@ -1,0 +1,5 @@
+name PurpleDyer 
+world end 
+class archer 
+money 999999 
+level 2 
