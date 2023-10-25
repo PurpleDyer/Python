@@ -7,6 +7,7 @@ SCREEN_HEIGHT = 600
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+
 # making the player a character that is rectangle
 player = pygame.rect.Rect(300, 250, 10, 10)
 
