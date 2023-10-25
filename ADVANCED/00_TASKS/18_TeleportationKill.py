@@ -130,7 +130,7 @@ class Character:
         self.__total_assasinations = 4
 
     def __str__(self):
-        return '◼'
+        return 'T'
 
     def move(self, direction):
         global board 

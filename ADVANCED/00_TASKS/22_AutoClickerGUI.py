@@ -1,8 +1,8 @@
-import keyboard
-from tkinter import *
-import threading
+from keyboard import read_key
+from tkinter import Tk, Button, mainloop
+from threading import Thread
 from time import sleep 
-import pyautogui as pg
+from pyautogui import click, position
 
 # ==================================================================================================================
 
@@ -12,106 +12,109 @@ root = Tk()
 # ==================================================================================================================
 
 def on_click():
-    sleep(2)
+    sleep(0.5)
     def one():
         global dead
 
         while not dead:
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
 
     def two():
         sleep(0.0001)
         global dead
 
         while not dead:
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
 
     def three():
         sleep(0.0001)
         global dead
 
         while not dead:
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
 
     def four():
         sleep(0.0001)
         global dead 
 
         while not dead:
-            mouseX, mouseY = pg.position()  
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()  
+            click(x=mouseX, y=mouseY)
 
     def five():
         sleep(0.0001)
         global dead 
 
         while not dead: 
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
 
     def six():
         sleep(0.0001)
         global dead 
 
         while not dead: 
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
 
     def seven():
         sleep(0.0001)
         global dead 
 
         while not dead: 
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
 
     def eight():
         sleep(0.0001)
         global dead 
 
         while not dead: 
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
     
     def nine():
         sleep(0.0001)
         global dead 
 
         while not dead: 
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
 
     def ten():
         sleep(0.0001)
         global dead 
 
         while not dead: 
-            mouseX, mouseY = pg.position()
-            pg.click(x=mouseX, y=mouseY)
+            mouseX, mouseY = position()
+            click(x=mouseX, y=mouseY)
 
     def reader():
         global dead
 
         while not dead:
-            key = keyboard.read_key()
+            key = read_key()
             if key == 'alt':
                 dead = True
+        sleep(1)
+        dead = False
                 
+     
 
-    r_t = threading.Thread(target=reader)
-    o_t = threading.Thread(target=one)
-    t_t = threading.Thread(target=two)
-    tt_t = threading.Thread(target=three)
-    f_t = threading.Thread(target=four)
-    ff_t = threading.Thread(target=five)
-    s_t = threading.Thread(target=six)
-    ss_t = threading.Thread(target=seven)
-    e_t = threading.Thread(target=eight)
-    n_t = threading.Thread(target=nine)
-    ttt_t = threading.Thread(target=ten)
+    r_t = Thread(target=reader)
+    o_t = Thread(target=one)
+    t_t = Thread(target=two)
+    tt_t = Thread(target=three)
+    f_t = Thread(target=four)
+    ff_t = Thread(target=five)
+    s_t = Thread(target=six)
+    ss_t = Thread(target=seven)
+    e_t = Thread(target=eight)
+    n_t = Thread(target=nine)
+    ttt_t = Thread(target=ten)
 
     r_t.start()
     o_t.start()
@@ -120,7 +123,7 @@ def on_click():
     f_t.start()
     ff_t.start()
     s_t.start()
-    s_t.start()
+    ss_t.start()
     e_t.start()
     n_t.start()
     ttt_t.start()
